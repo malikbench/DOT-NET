@@ -1,0 +1,5 @@
+C:\Users\malik\OneDrive\M2\DOT NET\M2Link\M2LinkXamarin\M2LinkXamarin\obj\Debug\netstandard2.0\M2LinkXamarin.csprojAssemblyReference.cache
+C:\Users\malik\OneDrive\M2\DOT NET\M2Link\M2LinkXamarin\M2LinkXamarin\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\malik\OneDrive\M2\DOT NET\M2Link\M2LinkXamarin\M2LinkXamarin\obj\Debug\netstandard2.0\LoginPage.xaml.g.cs
+C:\Users\malik\OneDrive\M2\DOT NET\M2Link\M2LinkXamarin\M2LinkXamarin\obj\Debug\netstandard2.0\M2LinkXamarin.AssemblyInfoInputs.cache
+C:\Users\malik\OneDrive\M2\DOT NET\M2Link\M2LinkXamarin\M2LinkXamarin\obj\Debug\netstandard2.0\M2LinkXamarin.AssemblyInfo.cs

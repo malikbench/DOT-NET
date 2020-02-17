@@ -1,0 +1,61 @@
+﻿@model M2Link.Models.MessageModel
+
+@{
+    ViewBag.Title = "Suppression d'un message";
+}
+<h2>Suppression d'un message</h2>
+
+<h3>Etes vous sûr de vouloir supprimer ce message ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.guid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.auteur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.auteur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt></dt>
+        <dd>
+            @using (Html.BeginForm("DeletePost", "Message"))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.guid)
+                @Html.HiddenFor(model => model.message)
+                @Html.HiddenFor(model => model.auteur)
+                @Html.HiddenFor(model => model.date)
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Supprimer" class="btn btn-danger" />
+                </div>
+            }
+        </dd>
+    </dl>
+</div>
+@Html.ActionLink("Retour", "Index", "Profile", null, new { @class = "btn btn-sm btn-default" }) 

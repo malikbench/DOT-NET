@@ -1,0 +1,57 @@
+﻿﻿@model IEnumerable<M2Link.Models.ProfileModel>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Liste des utilisateurs</h2>
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pseudo)
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Pseudo)
+    </td>
+    <td class="fit-content">
+        @if (Model.FirstOrDefault(profile => profile.Pseudo == @Html.ViewContext.HttpContext.User.Identity.Name).Followings.Contains(item.Pseudo))
+        {
+            <a href="@Url.Action("Unfollow" , "Profile", new { Pseudo = item.Pseudo, source = Url.Action()})" class="btn btn-sm btn-default">Ne plus suivre</a>
+        }
+        else
+        {
+            <a href="@Url.Action("Follow" , "Profile", new { Pseudo = item.Pseudo, source = Url.Action()})" class="btn btn-sm btn-primary">Suivre</a>
+        }
+    </td>
+
+</tr>
+    }
+
+</table>
+
+<p>@Html.ActionLink("Retour", "Index", "Home", null, new { @class = "btn btn-sm btn-default" })</p>

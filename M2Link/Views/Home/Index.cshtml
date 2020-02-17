@@ -1,0 +1,31 @@
+﻿﻿@model IEnumerable<M2Link.Models.MessageModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row top-index-button">
+    <div class="col-sm-6">
+        @Html.ActionLink("Liste des utilisateurs", "List", "Profile", null, new { @class = "btn btn-sm btn-primary" })
+    </div>
+    <div class="col-sm-6">
+        @Html.ActionLink("Envoyer un message", "Send", "Message", null, new { @class = "btn btn-sm btn-success" })
+    </div>
+</div>
+<hr />
+
+<h3>Message des Followers</h3>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        @foreach (var item in Model)
+        {
+            <div class="panel panel-primary">
+                <div class="panel-heading">@Html.DisplayFor(modelItem => item.auteur) &nbsp;&nbsp;&nbsp;<div class="label label-default">@Html.DisplayFor(modelItem => item.date)</div></div>
+                <div class="panel-body">
+                    @Html.DisplayFor(modelItem => item.message)
+                </div>
+            </div>
+        }
+    </div>
+</div>
